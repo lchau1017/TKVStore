@@ -38,6 +38,9 @@ class ExecuteCommandUseCaseImpl @Inject constructor(
             is Command.Get -> {
                 return repository.get(command.key)
             }
+            is Command.Filter -> {
+                return repository.filter(command.key).joinToString()
+            }
             Command.Begin -> {
                 repository.beginTransaction()
             }

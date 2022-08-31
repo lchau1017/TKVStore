@@ -16,6 +16,12 @@ class StoreImpl @Inject constructor() : Store {
         return map[key]
     }
 
+    override suspend fun filter(key: String): List<String> {
+        return map.filter {
+            it.key.startsWith(key)
+        }.values.toList()
+    }
+
     override suspend fun delete(key: String): String? {
         return map.remove(key)
     }

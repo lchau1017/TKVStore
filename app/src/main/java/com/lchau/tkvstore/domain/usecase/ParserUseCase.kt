@@ -8,6 +8,7 @@ import javax.inject.Inject
 
 private const val GET_COMMAND = "GET"
 private const val SET_COMMAND = "SET"
+private const val FILTER_COMMAND = "FILTER"
 private const val DELETE_COMMAND = "DELETE"
 private const val COUNT_COMMAND = "COUNT"
 private const val BEGIN_COMMAND = "BEGIN"
@@ -30,6 +31,7 @@ class ParserUseCase @Inject constructor() {
             COMMIT_COMMAND -> if (args.isEmpty()) return Commit
             ROLLBACK_COMMAND -> if (args.isEmpty()) return Rollback
             GET_COMMAND -> if (args.size == 1) return Get(args[0])
+            FILTER_COMMAND -> if (args.size == 1) return Filter(args[0])
             DELETE_COMMAND -> if (args.size == 1) return Delete(args[0])
             COUNT_COMMAND -> if (args.size == 1) return Count(args[0])
             SET_COMMAND -> if (args.size == 2) return Set(args[0], args[1])

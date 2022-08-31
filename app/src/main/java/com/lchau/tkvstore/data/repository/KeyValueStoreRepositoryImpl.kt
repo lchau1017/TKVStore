@@ -28,6 +28,11 @@ class KeyValueStoreRepositoryImpl constructor(
         return store.get(key)!!
     }
 
+    override suspend fun filter(key: String): List<String> {
+        checkKeyNotSetException(store.filter(key).isEmpty())
+        return store.filter(key)
+    }
+
     override suspend fun delete(key: String) {
         checkKeyNotSetException(store.delete(key).isNullOrEmpty())
     }

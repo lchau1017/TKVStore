@@ -6,6 +6,8 @@ interface KeyValueStoreRepository {
 
     suspend fun get(key: String): String
 
+    suspend fun filter(key: String): List<String>
+
     suspend fun delete(key: String)
 
     suspend fun count(value: String): Int

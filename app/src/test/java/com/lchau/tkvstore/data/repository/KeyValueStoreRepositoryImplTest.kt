@@ -10,6 +10,7 @@ import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import java.util.ArrayDeque
@@ -126,6 +127,23 @@ class KeyValueStoreRepositoryImplTest {
 
             // when/then
             testedClass.rollbackTransaction()
+        }
+
+    @Test(expected = KeyNotSetException::class)
+    fun `given no value set when filter the key then throw KeyNotSetException`() =
+        runTest {
+            // when/then
+            testedClass.filter("f")
+        }
+
+    @Test
+    fun `given set key f value 1 when filter the key f then return 1`() =
+        runTest {
+
+            coEvery { store.filter("f") } returns listOf("1")
+
+            Assert.assertEquals(listOf("1"), testedClass.filter("f"))
+
         }
 
 }
