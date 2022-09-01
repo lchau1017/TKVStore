@@ -8,13 +8,24 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.TKVStore">
         <activity
-            android:name="com.lchau.tkvstore.ui.MainActivity"
-            android:exported="true">
+            android:name=".ui.viewbinding.MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.TKVStore.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity-->
+<!--            android:name="com.lchau.tkvstore.ui.compose.ComposeMainActivity"-->
+<!--            android:exported="true">-->
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
+<!--        </activity>-->
     </application>
 
 </manifest>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tKVStoreFragment">
+
+    <fragment
+        android:id="@+id/tKVStoreFragment"
+        android:name="com.lchau.tkvstore.ui.viewbinding.store.view.TKVStoreFragment"
+        android:label="@string/tkv_store_fragment_label"
+        tools:layout="@layout/fragment_tkv_store">
+
+    </fragment>
+
+
+</navigation>
